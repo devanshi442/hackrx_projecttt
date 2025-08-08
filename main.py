@@ -20,6 +20,7 @@ class QueryResponse(BaseModel):
     answers: List[str]
 
 @app.post("/hackrx/run", response_model=QueryResponse)
+@app.post("/ask")
 async def hackrx_run(
     request: Request,
     payload: QueryRequest,
