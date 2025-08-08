@@ -10,10 +10,10 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")
 app = FastAPI()
 
-# --- Pydantic Models ---
 class QueryRequest(BaseModel):
     documents: List[str]
     questions: List[str]
+
 class QueryResponse(BaseModel):
     answers: List[str]
 
@@ -30,7 +30,6 @@ async def hackrx_run(
     payload: QueryRequest,
     authorization: Optional[str] = Header(None)
 ):
-    # ... (Your original function code) ...
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="Missing or invalid Authorization header")
     token = authorization.split("Bearer ")[-1].strip()
