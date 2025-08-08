@@ -5,6 +5,12 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain.docstore.document import Document
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("OPENAI_API_KEY")
+
 def create_vector_store(chunks):
     """
     Create a FAISS vector store from a list of text chunks.

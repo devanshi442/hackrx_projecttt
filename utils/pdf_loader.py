@@ -5,6 +5,12 @@ from PyPDF2 import PdfReader
 from io import BytesIO
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("OPENAI_API_KEY")
+
 def download_pdf_from_url(url):
     try:
         response = requests.get(url)
