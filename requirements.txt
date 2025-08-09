@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-python-dotenv
-requests
-langchain==0.1.14
-openai==1.14.3
-pypdf2
-faiss-cpu
